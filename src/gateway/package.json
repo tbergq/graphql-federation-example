@@ -1,0 +1,9 @@
+{
+  "name": "@tbergq/gql-gateway",
+  "version": "1.0.0",
+  "main": "index",
+  "private": true,
+  "dependencies": {
+    "@apollo/gateway": "^0.13.2"
+  }
+}

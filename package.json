@@ -1,0 +1,29 @@
+{
+  "name": "@tbergq/gql-federation",
+  "version": "1.0.0",
+  "description": "testing gql-federation",
+  "main": "index.js",
+  "author": "Trond Bergquist <trond_bergquist@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "src/*"
+    ]
+  },
+  "devDependencies": {
+    "@adeira/babel-preset-adeira": "^0.3.0",
+    "@adeira/eslint-config": "^1.2.1",
+    "@adeira/eslint-runner": "^0.1.0",
+    "@adeira/flow-bin": "^0.2.0",
+    "@babel/core": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "flow-bin": "^0.121.0",
+    "jest": "^25.2.4"
+  },
+  "scripts": {
+    "typecheck": "yarn flow",
+    "lint": "yarn jest --config=.jest-eslint.config.js"
+  }
+}
