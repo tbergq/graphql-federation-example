@@ -1,6 +1,7 @@
 type Query {
   """A list of all users"""
   post(id: ID!): Post
+  posts(userId: ID!): [Post]
 }
 
 extend type User @key(fields: "id") {
