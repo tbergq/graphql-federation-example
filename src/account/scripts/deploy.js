@@ -25,4 +25,4 @@ new ShellCommand(buildDir, 'yarn', 'install').setOutputToScreen().runSynchronous
 // eslint-disable-next-line no-console
 console.log('built to ', buildDir);
 
-new ShellCommand(buildDir, 'yarn', 'now').setOutputToScreen().runSynchronously();
+new ShellCommand(buildDir, 'yarn', 'now', '--prod').setOutputToScreen().runSynchronously();

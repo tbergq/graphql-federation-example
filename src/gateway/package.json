@@ -7,7 +7,8 @@
     "@adeira/monorepo-utils": "^0.6.0",
     "@apollo/gateway": "^0.13.2",
     "apollo-server": "^2.11.0",
-    "graphql": "^14.6.0"
+    "graphql": "^14.6.0",
+    "now": "16.7.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

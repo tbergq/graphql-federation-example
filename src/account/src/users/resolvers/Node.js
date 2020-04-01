@@ -1,6 +1,7 @@
 // @flow
 
 import { isTypeOf, fromGlobalId } from '@adeira/graphql-global-id';
+import { decode } from '@adeira/graphql-global-id/src/Encoder';
 
 import { type User } from '../../dataSources/Users';
 import { type DataSource } from '../../dataSources';
@@ -21,7 +22,12 @@ type NodeUser = $ReadOnly<{
   ...User,
 }>;
 
-type NodeResolver = NodeUser | null;
+type ExternalType = $ReadOnly<{
+  ...Typename,
+  id: string,
+}>;
+
+type NodeResolver = NodeUser | ExternalType;
 
 export default async function Node(
   _: mixed,
@@ -36,5 +42,9 @@ export default async function Node(
       __typename: 'User',
     };
   }
-  return null;
+  const [type] = decode((id: any)).split(':');
+  return {
+    id,
+    __typename: type,
+  };
 }

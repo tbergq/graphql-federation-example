@@ -14,7 +14,8 @@
     "dotenv": "^8.2.0",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "now": "16.7.3"
   },
   "scripts": {
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js",

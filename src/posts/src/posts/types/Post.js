@@ -1,21 +1,32 @@
 // @flow
 
-import { toGlobalId } from '@adeira/graphql-global-id';
+import { toGlobalId, fromGlobalId } from '@adeira/graphql-global-id';
 
 import type { Post as PostsDataSource } from '../../dataSources/Posts';
+import type { DataSource } from '../../dataSources';
 
-type PostsResolver = {
-  +id: PostsDataSource => string,
-  +user: PostsDataSource => { +id: string },
+type Context = {
+  +dataSources: DataSource,
 };
 
-const Post: PostsResolver = {
-  id: ({ _id: id }) => {
+type ResolvePost = {
+  +id: string,
+};
+
+const Post = {
+  id: ({ _id: id }: PostsDataSource): string => {
     return toGlobalId('Post', id);
   },
-  user: ({ userId }) => ({
+  user: ({ userId }: PostsDataSource): { +id: string } => ({
     id: userId,
   }),
+  __resolveReference: async (
+    { id }: ResolvePost,
+    { dataSources }: Context,
+  ): Promise<PostsDataSource> => {
+    const post = await dataSources.posts.getPost(fromGlobalId((id: any)));
+    return post;
+  },
 };
 
 export default Post;

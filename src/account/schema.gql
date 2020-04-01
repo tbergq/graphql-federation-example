@@ -12,3 +12,7 @@ type User implements Node @key(fields: "id") {
 interface Node {
   id: ID!
 }
+
+extend type Post implements Node @key(fields: "id") {
+  id: ID! @external
+}
