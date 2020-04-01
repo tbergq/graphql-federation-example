@@ -7,8 +7,14 @@ import { ApolloGateway } from '@apollo/gateway';
 // your implementing service names and URLs
 const gateway = new ApolloGateway({
   serviceList: [
-    { name: 'accounts', url: 'http://localhost:4001' },
-    { name: 'posts', url: 'http://localhost:4002' },
+    {
+      name: 'accounts',
+      url: __DEV__ ? 'http://localhost:4001' : 'https://tbergq-graphql-account.now.sh/',
+    },
+    {
+      name: 'posts',
+      url: __DEV__ ? 'http://localhost:4002' : 'https://tbergq-graphql-posts.now.sh/',
+    },
     // Define additional services here
   ],
 });
@@ -19,9 +25,11 @@ const server = new ApolloServer({
 
   // Disable subscriptions (not currently supported with ApolloGateway)
   subscriptions: false,
+  introspection: true,
+  playground: true,
 });
 
-server.listen(4000).then(({ url }) => {
+server.listen(process.env.PORT ?? 4000).then(({ url }) => {
   // eslint-disable-next-line no-console
   console.log(`🚀 Server ready at ${url}`);
 });

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "tbergq-graphql-gateway",
+  "builds": [
+    { "src": "index.js", "use": "@now/node-server", "config": { "maxLambdaSize": "50mb" } }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "alias": "tbergq-graphql-gateway.now.sh"
+}
