@@ -9,6 +9,10 @@ type Context = {
   +dataSources: DataSource,
 };
 
-export default function Users(_: mixed, { id }: { +id: string }, { dataSources }: Context): Post {
+export default function Users(
+  _: mixed,
+  { id }: { +id: string },
+  { dataSources }: Context,
+): Promise<Post> {
   return dataSources.posts.getPost(fromGlobalId((id: any)));
 }

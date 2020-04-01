@@ -10,7 +10,7 @@ export type Post = {
 };
 
 export default class Posts extends MongoDataSource {
-  getPost(id: string): Post {
+  getPost(id: string): Promise<Post> {
     return this.model.findById(id);
   }
 }

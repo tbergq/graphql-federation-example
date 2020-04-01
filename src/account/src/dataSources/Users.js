@@ -8,7 +8,7 @@ export type User = {
 };
 export default class Users extends MongoDataSource {
   getUser(userId: string): User {
-    return this.findOneById(userId);
+    return this.model.findById(userId);
   }
 
   getAll(): $ReadOnlyArray<User> {
