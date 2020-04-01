@@ -29,6 +29,7 @@
     "dev:account": "yarn workspace @tbergq/gql-account dev",
     "dev:posts": "yarn workspace @tbergq/gql-posts dev",
     "dev:gateway": "yarn workspace @tbergq/gql-gateway dev",
-    "dev": "yarn concurrently \"yarn dev:account\" \"yarn dev:posts\""
+    "dev": "yarn concurrently \"yarn dev:account\" \"yarn dev:posts\"",
+    "deploy": "yarn workspace @tbergq/gql-account deploy && yarn workspace @tbergq/gql-posts deploy && yarn workspace @tbergq/gql-gateway deploy"
   }
 }
