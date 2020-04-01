@@ -13,4 +13,8 @@ export default class Posts extends MongoDataSource {
   getPost(id: string): Promise<Post> {
     return this.model.findById(id);
   }
+
+  getPostsByUserId(userId: string): Promise<$ReadOnlyArray<Post>> {
+    return this.model.find({ userId });
+  }
 }

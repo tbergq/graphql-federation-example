@@ -20,6 +20,7 @@ const User: UserResolver = {
   id: ({ _id: id }) => {
     return toGlobalId('User', id);
   },
+
   __resolveReference: async ({ id }: ResolveUser, { dataSources }: Context) => {
     const user = await dataSources.users.getUser(fromGlobalId((id: any)));
     return user;

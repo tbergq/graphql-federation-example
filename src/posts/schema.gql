@@ -5,6 +5,7 @@ type Query {
 
 extend type User @key(fields: "id") {
   id: ID! @external
+  posts: [Post]
 }
 
 type Post @key(fields: "id") {
