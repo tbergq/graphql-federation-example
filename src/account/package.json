@@ -9,6 +9,7 @@
     "@apollo/federation": "^0.13.2",
     "apollo-datasource-mongodb": "^0.2.5",
     "apollo-server": "^2.11.0",
+    "dotenv": "^8.2.0",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "nodemon": "^2.0.2"

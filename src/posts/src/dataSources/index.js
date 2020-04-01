@@ -1,10 +1,14 @@
 // @flow
 
+import { config } from 'dotenv';
+
 import connection from '../db/connection';
 import Posts from './Posts';
 import PostModel from '../db/posts';
 
-connection.openUri('mongodb://localhost:27017/posts', {
+config();
+
+connection.openUri(process.env.POSTS_DB_URL, {
   useCreateIndex: true,
   useNewUrlParser: true,
 });

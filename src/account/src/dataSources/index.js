@@ -1,10 +1,14 @@
 // @flow
 
+import { config } from 'dotenv';
+
 import connection from '../db/connection';
 import Users from './Users';
 import UserModel from '../db/users';
 
-connection.openUri('mongodb://localhost:27017/account', {
+config();
+
+connection.openUri(process.env.ACCOUNT_DB_URL, {
   useCreateIndex: true,
   useNewUrlParser: true,
 });
