@@ -18,6 +18,6 @@
   },
   "scripts": {
     "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js",
-    "build": "yarn babel src --out-dir dist --root-mode upward"
+    "deploy": "yarn monorepo-babel-node scripts/deploy.js"
   }
 }

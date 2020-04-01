@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "tbergq-graphql-posts",
+  "builds": [
+    { "src": "index.js", "use": "@now/node-server", "config": { "maxLambdaSize": "50mb" } }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "POSTS_DB_URL":"@posts_db_url"
+  },
+  "alias": "tbergq-graphql-posts.now.sh"
+}
