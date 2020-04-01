@@ -1,0 +1,16 @@
+type Query {
+  """A list of all users"""
+  post(id: ID!): Post
+}
+
+extend type User @key(fields: "id") {
+  id: ID!
+}
+
+type Post @key(fields: "id") {
+  id: ID!
+  date: String
+  body: String
+  user: User
+}
+
