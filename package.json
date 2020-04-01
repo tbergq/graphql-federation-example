@@ -24,7 +24,7 @@
     "jest": "^25.2.4"
   },
   "scripts": {
-    "typecheck": "yarn flow",
+    "typecheck": "yarn adeira-flow-bin",
     "lint": "yarn jest --config=.jest-eslint.config.js",
     "dev:account": "yarn workspace @tbergq/gql-account dev",
     "dev:posts": "yarn workspace @tbergq/gql-posts dev",
