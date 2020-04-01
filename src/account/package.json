@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@adeira/graphql-global-id": "^0.8.0",
+    "@adeira/js": "^1.2.2",
     "@adeira/monorepo-utils": "^0.6.0",
     "@apollo/federation": "^0.13.2",
     "apollo-datasource-mongodb": "^0.2.5",
@@ -12,9 +13,16 @@
     "dotenv": "^8.2.0",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "now": "16.7.3"
   },
   "scripts": {
-    "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js"
+    "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js",
+    "build": "yarn babel src --out-dir dist --root-mode upward",
+    "deploy": "yarn monorepo-babel-node scripts/deploy.js"
+  },
+  "devDependencies": {
+    "@adeira/monorepo-utils": "^0.6.0",
+    "@babel/cli": "^7.8.4"
   }
 }

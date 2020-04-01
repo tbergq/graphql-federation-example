@@ -11,6 +11,6 @@ export default function Users(
   _: mixed,
   { userId }: { +userId: string },
   { dataSources }: Context,
-): Promise<Post> {
+): Promise<$ReadOnlyArray<Post>> {
   return dataSources.posts.getPostsByUserId(userId);
 }
