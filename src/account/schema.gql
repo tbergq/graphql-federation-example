@@ -1,10 +1,14 @@
 type Query {
   """A list of all users"""
   users: [User]
+  node(id: ID!): Node
 }
 
-type User @key(fields: "id") {
+type User implements Node @key(fields: "id") {
   id: ID!
   username: String
 }
 
+interface Node {
+  id: ID!
+}

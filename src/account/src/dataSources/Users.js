@@ -7,7 +7,7 @@ export type User = {
   +username: string,
 };
 export default class Users extends MongoDataSource {
-  getUser(userId: string): User {
+  getUser(userId: string): Promise<User> {
     return this.model.findById(userId);
   }
 
