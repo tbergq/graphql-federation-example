@@ -18,12 +18,17 @@
     "@adeira/flow-bin": "^0.2.0",
     "@babel/core": "^7.9.0",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
     "flow-bin": "^0.121.0",
     "jest": "^25.2.4"
   },
   "scripts": {
     "typecheck": "yarn flow",
-    "lint": "yarn jest --config=.jest-eslint.config.js"
+    "lint": "yarn jest --config=.jest-eslint.config.js",
+    "dev:account": "yarn workspace @tbergq/gql-account dev",
+    "dev:posts": "yarn workspace @tbergq/gql-posts dev",
+    "dev:gateway": "yarn workspace @tbergq/gql-gateway dev",
+    "dev": "yarn concurrently \"yarn dev:account\" \"yarn dev:posts\""
   }
 }

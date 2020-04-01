@@ -8,6 +8,7 @@ import { ApolloGateway } from '@apollo/gateway';
 const gateway = new ApolloGateway({
   serviceList: [
     { name: 'accounts', url: 'http://localhost:4001' },
+    { name: 'posts', url: 'http://localhost:4002' },
     // Define additional services here
   ],
 });
