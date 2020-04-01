@@ -4,6 +4,14 @@
   "main": "index",
   "private": true,
   "dependencies": {
-    "@apollo/gateway": "^0.13.2"
+    "@apollo/gateway": "^0.13.2",
+    "apollo-server": "^2.11.0",
+    "graphql": "^14.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+   "scripts": {
+    "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js"
   }
 }
