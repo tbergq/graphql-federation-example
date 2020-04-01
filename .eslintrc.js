@@ -15,5 +15,6 @@ module.exports = {
   },
   rules: {
     eqeqeq: [ERROR, 'smart'],
+    'flowtype/require-inexact-type': OFF,
   },
 };

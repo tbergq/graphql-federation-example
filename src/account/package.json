@@ -1,0 +1,19 @@
+{
+  "name": "@tbergq/gql-account",
+  "version": "1.0.0",
+  "main": "index",
+  "private": true,
+  "dependencies": {
+    "@adeira/graphql-global-id": "^0.8.0",
+    "@adeira/monorepo-utils": "^0.6.0",
+    "@apollo/federation": "^0.13.2",
+    "apollo-datasource-mongodb": "^0.2.5",
+    "apollo-server": "^2.11.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "dev": "yarn run nodemon --verbose --ignore __tests__/ --ignore __mocks__/ --exec yarn monorepo-babel-node src/index.js"
+  }
+}

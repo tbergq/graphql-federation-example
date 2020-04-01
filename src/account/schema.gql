@@ -1,0 +1,10 @@
+type Query {
+  """A list of all users"""
+  users: [User]
+}
+
+type User @key(fields: "id") {
+  id: ID!
+  username: String
+}
+
